@@ -1,5 +1,5 @@
 export const API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
-export const API_KEY = "4817d95667154e2b474184f60dbbec68";
+
 export const statePopulationData = [
   { name: "Uttar Pradesh", code: "UP", population: 224979000, temperature: 22 },
   { name: "Bihar", code: "BR", population: 124799926, temperature: 30 },

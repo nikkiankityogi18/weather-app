@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ForcastChart from "./ForcastChart";
-import { API_BASE_URL, API_KEY } from "../constents";
+import { API_BASE_URL } from "../constents";
 
 const Search = () => {
   const [searchText, setSearchText] = useState("");
@@ -16,6 +16,7 @@ const Search = () => {
   const [weatherIcon, setWeatherIcon] = useState("cloud");
   const [recentSearches, setRecentSearches] = useState([]);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const apiKey = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     searchResult(searchText);
@@ -50,7 +51,7 @@ const Search = () => {
   };
 
   const searchResult = async (text) => {
-    let url = `${API_BASE_URL}?q=${text}&units=Metric&appid=${API_KEY}`;
+    let url = `${API_BASE_URL}?q=${text}&units=Metric&appid=${apiKey}`;
     if (searchText === "") {
       return 0;
     }
@@ -137,7 +138,7 @@ const Search = () => {
               </div>
               {isSearchFocused && (
                 <div className="absolute top-10 left-1 w-72">
-                  <ul className="rounded-lg p-1 bg-blue-500">
+                  <ul className="rounded-lg p-1 bg-white opacity-60">
                     {recentSearches.map((search, index) => (
                       <li
                         className=" w-60 p-1"
