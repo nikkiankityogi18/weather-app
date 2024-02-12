@@ -67,7 +67,6 @@ const Search = () => {
 
       setRecentSearches([searchText, ...recentSearches].slice(0, 5));
       localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
-      console.log(recentSearches);
     } catch (error) {
       setError(error.response.data.message);
     } finally {
